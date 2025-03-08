@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10b06c7c69874ad4390b6d9b4d73ce98, type: 3}
+  m_Name: YajanVehicle_2
+  m_EditorClassIdentifier: 
+  id: 5
+  displayName: YajanVehicle_2
+  icon: {fileID: 21300000, guid: f9d2f5f149079ed479164127b4190f61, type: 3}
+  introPrefab: {fileID: 4665308337668532153, guid: 8a475443819f27d4783af2badce62bb3,
+    type: 3}
+  gameplayPrefab: {fileID: 6570913146124812325, guid: ada2d3ccf518b6a4a92858831ac471ef,
+    type: 3}
