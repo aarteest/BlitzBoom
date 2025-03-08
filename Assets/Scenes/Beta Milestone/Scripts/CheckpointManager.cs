@@ -48,6 +48,7 @@ public class CheckpointManager : NetworkBehaviour
 		}
 
 		lapCount++;
+		Debug.Log(lapCount);
 	}
 
 	public void AddCheckPoint(Checkpoints newCheckpoint)

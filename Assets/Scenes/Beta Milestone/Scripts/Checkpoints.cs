@@ -32,7 +32,7 @@ public class Checkpoints : NetworkBehaviour
 		{
 			if (other.gameObject.TryGetComponent<JankyCarControl_Multiplayer>(out JankyCarControl_Multiplayer crossedCar))
 			{
-
+				Debug.Log($"{other.gameObject.name} triggered");
 				if (!crossedCarsList.Contains(crossedCar))
 				{
 					if (crossedCarsList.Count < CheckpointManager.instance.GetTotalPlayerCount())
