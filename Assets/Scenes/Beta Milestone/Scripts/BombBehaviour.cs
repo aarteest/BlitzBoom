@@ -175,8 +175,9 @@ public class BombBehaviour : NetworkBehaviour
 		if (other.CompareTag("BombWallCollider"))
 		{
 			Debug.Log("Bomb hit a wall! Respawning...");
-			//bManager.SpawnBombOnRandomPlayer();
-		}
+            bManager.SpawnBombOnRandomPlayer();
+        }
+
 	}
 
 	private void ResetBomb()
