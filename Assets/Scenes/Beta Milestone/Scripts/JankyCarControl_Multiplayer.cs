@@ -37,6 +37,8 @@ public class JankyCarControl_Multiplayer : NetworkBehaviour
     [SerializeField] private float brakingDeceleration = 100f;
     [SerializeField] private float brakingDragCoefficient = 0.5f;
 
+    [Header("Lap Settings")]
+    private int finishedLapCount = 0;
 
 	[Header("Audio")]
 	[SerializeField] private AudioSource accelerationSFX;
@@ -200,5 +202,17 @@ public class JankyCarControl_Multiplayer : NetworkBehaviour
     {
         carRB.velocity = Vector3.zero;
     }
+
+    public void FinishCurrentLap(int points)
+    {
+        finishedLapCount++;
+
+        if (TryGetComponent<PlayerBombTrackerPointSystem>(out PlayerBombTrackerPointSystem pointSystem))
+        {
+            pointSystem.AddToTotalPoints(points);
+        }
+    }
+
+
 }
 
