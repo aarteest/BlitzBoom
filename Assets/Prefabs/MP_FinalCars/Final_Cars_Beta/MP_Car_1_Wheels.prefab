@@ -51,7 +51,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6036068619692960503
 Transform:
   m_ObjectHideFlags: 0
@@ -261,8 +261,8 @@ Transform:
   m_GameObject: {fileID: 2326495479341326386}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000016391275}
-  m_LocalPosition: {x: 2.0100102, y: 1.7700005, z: -1.0100095}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.0100102, y: 1.7700005, z: -2.0100098}
+  m_LocalScale: {x: 1, y: 1, z: 0.50477576}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6119424757066766477}
@@ -380,8 +380,8 @@ Transform:
   m_GameObject: {fileID: 5923321885181927729}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000016391275}
-  m_LocalPosition: {x: -1.7199708, y: 1.7700005, z: -1.0100101}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.72, y: 1.7700005, z: -2.01}
+  m_LocalScale: {x: 1, y: 1, z: 0.50477576}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6119424757066766477}
@@ -1193,6 +1193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsText: {fileID: 6551655002991183782}
+  pointsPerSecond: 5
 --- !u!82 &-8072826936591725973
 AudioSource:
   m_ObjectHideFlags: 0
