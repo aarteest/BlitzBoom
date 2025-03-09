@@ -209,10 +209,15 @@ public class JankyCarControl_Multiplayer : NetworkBehaviour
 
         if (TryGetComponent<PlayerBombTrackerPointSystem>(out PlayerBombTrackerPointSystem pointSystem))
         {
+            Debug.Log($"Gained {points} points");
             pointSystem.AddToTotalPoints(points);
         }
     }
 
+    public int GetFinishedLapCount()
+    {
+        return finishedLapCount;
+    }
 
 }
 

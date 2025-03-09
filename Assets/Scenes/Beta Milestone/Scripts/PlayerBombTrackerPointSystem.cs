@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Unity.Netcode;
+using UnityEngine.InputSystem.iOS;
 
 public class PlayerBombTrackerPointSystem : NetworkBehaviour
 {
@@ -13,6 +14,9 @@ public class PlayerBombTrackerPointSystem : NetworkBehaviour
 	private bool hasBomb = false;
 	private float timeToAddPoints = 1f;
 	private float previousPointsTime;
+	public TextMeshProUGUI currentLapText;
+	public GameObject leaderBoardTextPrefab; 
+
 
 	private void Update()
 	{
@@ -53,11 +57,33 @@ public class PlayerBombTrackerPointSystem : NetworkBehaviour
 		{
 			pointsText.text = totalPoints.ToString();
 		}
+
+		if (currentLapText != null)
+		{
+			if (TryGetComponent<JankyCarControl_Multiplayer>(out JankyCarControl_Multiplayer carScript))
+			{
+				int maxLapCount = CheckpointManager.instance.totalLaps;
+				int currentLap = carScript.GetFinishedLapCount();
+				currentLapText.text = $"{currentLap}/ {maxLapCount}";
+
+				if (currentLap >= maxLapCount)
+				{
+					CheckpointManager.instance.AddPlayerToLeaderboard(this, totalPoints);
+				}
+
+			}
+
+		}
 	}
 
 	public void AddToTotalPoints(int newPoints)
 	{
 		totalPoints += newPoints;
 		UpdateUI();
+	}
+
+	public void UpdateLeaderboardUI()
+	{
+
 	}
 }
