@@ -41,6 +41,10 @@ public class CharacterSpawner : NetworkBehaviour
                 // Spawn the character at the selected spawn point
                 var characterInstance = Instantiate(character.GameplayPrefab, selectedSpawnPoint.position, selectedSpawnPoint.rotation);
                 characterInstance.GetComponent<NetworkObject>().SpawnAsPlayerObject(client.Value.clientId);
+                if (characterInstance.TryGetComponent<PlayerBombTrackerPointSystem>(out PlayerBombTrackerPointSystem playerScript))
+                {
+                    playerScript.SetPlayerString(character.DisplayName);
+                }
                 //characterInstance.SpawnAsPlayerObject(client.Value.clientId);
                 Debug.Log($"Character ownership assigned to Client ID: {characterInstance.OwnerClientId}");
                 DebugClientData();

@@ -70,7 +70,7 @@ public class JankyCarControl_Multiplayer : NetworkBehaviour
         GroundCheck();
         CalculateCarVelocity();
 
-        if (!IsOwner) return;
+        if (!IsOwner || finishedLapCount >= CheckpointManager.instance.totalLaps) return;
 
         float moveInput = Input.GetAxis("Vertical");
         float turnInput = Input.GetAxis("Horizontal");
@@ -207,10 +207,15 @@ public class JankyCarControl_Multiplayer : NetworkBehaviour
     {
         finishedLapCount++;
 
-        if (TryGetComponent<PlayerBombTrackerPointSystem>(out PlayerBombTrackerPointSystem pointSystem))
+		if (TryGetComponent<PlayerBombTrackerPointSystem>(out PlayerBombTrackerPointSystem pointSystem))
         {
+			pointSystem.AddToTotalPoints(points);
+
+			if (finishedLapCount >= CheckpointManager.instance.totalLaps)
+            {
+                CheckpointManager.instance.AddPlayerToLeaderboard(pointSystem, pointSystem.totalPoints);
+            }
             Debug.Log($"Gained {points} points");
-            pointSystem.AddToTotalPoints(points);
         }
     }
 
