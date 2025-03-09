@@ -120,6 +120,8 @@ public class BombBehaviour : NetworkBehaviour
 			debuff?.ApplyExplosion();
 
             networkObject.TrySetParent((NetworkObject)null, true);
+            rb.isKinematic = false; // Enable physics again
+            rb.detectCollisions = true;
 
             bManager.SpawnBombOnRandomPlayer();
 
