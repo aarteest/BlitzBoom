@@ -185,6 +185,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8616663690327538778, guid: 5f4b766cc69f5874aa1996c971b8182d,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2786199781
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -445,6 +450,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BombManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1362075626924146551, guid: d24e76b4f85a45e46a6a5d282e50d8a5,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 828840378
+      objectReference: {fileID: 0}
     - target: {fileID: 4051517631686228450, guid: d24e76b4f85a45e46a6a5d282e50d8a5,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -478,6 +488,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -183091177986967420, guid: 5a4144b560aa54648b0e2a79beaf2873,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2205587502
+      objectReference: {fileID: 0}
     - target: {fileID: 3607356017820253426, guid: 5a4144b560aa54648b0e2a79beaf2873,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -698,6 +713,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616663690327538778, guid: 5f4b766cc69f5874aa1996c971b8182d,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4026233640
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -933,6 +953,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8616663690327538778, guid: 5f4b766cc69f5874aa1996c971b8182d,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3549259475
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1001,6 +1026,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8616663690327538778, guid: 5f4b766cc69f5874aa1996c971b8182d,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4045405432
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1068,6 +1098,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616663690327538778, guid: 5f4b766cc69f5874aa1996c971b8182d,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2278400581
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1152,6 +1187,11 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8616663690327538778, guid: 5f4b766cc69f5874aa1996c971b8182d,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 144117472
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1169,6 +1209,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BombBarrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178436424745636957, guid: 9a7fb9dbf5d420840ae576958230e038,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 46839104
       objectReference: {fileID: 0}
     - target: {fileID: 7592073614060940677, guid: 9a7fb9dbf5d420840ae576958230e038,
         type: 3}
@@ -1370,6 +1415,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616663690327538778, guid: 5f4b766cc69f5874aa1996c971b8182d,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4233892633
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1574,6 +1624,13 @@ MonoBehaviour:
     GateFit: 2
     FocusDistance: 10
     m_SensorSize: {x: 1, y: 1}
+    Iso: 200
+    ShutterSpeed: 0.005
+    Aperture: 16
+    BladeCount: 5
+    Curvature: {x: 2, y: 11}
+    BarrelClipping: 0.25
+    Anamorphism: 0
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2039,6 +2096,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: ExplosionBarrel
       objectReference: {fileID: 0}
+    - target: {fileID: 8616663690327538778, guid: 5f4b766cc69f5874aa1996c971b8182d,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1918797750
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2137,6 +2199,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616663690327538778, guid: 5f4b766cc69f5874aa1996c971b8182d,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2414922673
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2337,6 +2404,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Windzone
+      objectReference: {fileID: 0}
+    - target: {fileID: 5287465614786070929, guid: 4c05b1134b71afe4c8f14e1984331442,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1073590678
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271649883514466615, guid: 4c05b1134b71afe4c8f14e1984331442,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3776248734
       objectReference: {fileID: 0}
     - target: {fileID: 7372405763825769012, guid: 4c05b1134b71afe4c8f14e1984331442,
         type: 3}
@@ -2612,7 +2689,7 @@ GameObject:
   - component: {fileID: 1994238476}
   m_Layer: 7
   m_Name: Car
-  m_TagString: Car
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2895,6 +2972,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362075626924146551, guid: d24e76b4f85a45e46a6a5d282e50d8a5,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3003780416
       objectReference: {fileID: 0}
     - target: {fileID: 2736415326090445300, guid: d24e76b4f85a45e46a6a5d282e50d8a5,
         type: 3}
