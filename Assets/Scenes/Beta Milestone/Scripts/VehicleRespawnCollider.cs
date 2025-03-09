@@ -35,7 +35,7 @@ public class VehicleRespawnCollider : NetworkBehaviour
         if (other.CompareTag("Checkpoint"))
         {
             lastCheckpoint = other.transform;
-            Debug.Log("Checkpoint Updated: " + lastCheckpoint.position);
+            //Debug.Log("Checkpoint Updated: " + lastCheckpoint.position);
         }
         
     }

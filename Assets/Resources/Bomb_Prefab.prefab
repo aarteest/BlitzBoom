@@ -129,6 +129,7 @@ MonoBehaviour:
   throwDistance: 100
   explosionForce: 10
   explosionDuration: 1
+  onGroundTime: 5
 --- !u!114 &8145841134322353002
 MonoBehaviour:
   m_ObjectHideFlags: 0

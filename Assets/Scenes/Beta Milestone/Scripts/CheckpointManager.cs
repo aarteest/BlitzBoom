@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
+using System.Linq;
 public class CheckpointManager : NetworkBehaviour
 {
 	public static CheckpointManager instance;
 
 	private List<Checkpoints> checkpoints = new List<Checkpoints>();
+	private Dictionary<PlayerBombTrackerPointSystem, int> leaderBoard = new Dictionary<PlayerBombTrackerPointSystem, int> { };
 
 	[SerializeField] private int lapCount;
 	public int maxLapPoints;
@@ -15,6 +17,7 @@ public class CheckpointManager : NetworkBehaviour
 
 	public int totalLaps;
 	public int pointsPerLap = 10000;
+	public int currentLapPoints;
 
 	private void Awake()
 	{
@@ -48,7 +51,7 @@ public class CheckpointManager : NetworkBehaviour
 		}
 
 		lapCount++;
-		Debug.Log(lapCount);
+		//Debug.Log(lapCount);
 	}
 
 	public void AddCheckPoint(Checkpoints newCheckpoint)
@@ -81,6 +84,7 @@ public class CheckpointManager : NetworkBehaviour
 			}
 
 			maxLapPoints = 3 * pointsPerLap;
+			currentLapPoints = maxLapPoints;
 		}
 
 	}
@@ -90,5 +94,22 @@ public class CheckpointManager : NetworkBehaviour
 		return totalPlayers.Count;
 	}
 
+	public void AddPlayerToLeaderboard(PlayerBombTrackerPointSystem playerScript, int playerScore)
+	{
+		if (!leaderBoard.ContainsKey(playerScript))
+		{
+			leaderBoard.Add(playerScript, playerScore);
 
+		}
+
+		foreach (var _playerScript in leaderBoard.Keys.ToList())
+		{
+			_playerScript.UpdateLeaderboardUI();
+		}
+	}
+
+	public Dictionary<PlayerBombTrackerPointSystem, int> GetLeaderboard()
+	{
+		return leaderBoard;
+	}
 }
