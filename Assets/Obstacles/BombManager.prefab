@@ -70,7 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrelPrefab: {fileID: 2674322061292441846, guid: 9a7fb9dbf5d420840ae576958230e038,
     type: 3}
-  warningPrefab: {fileID: 825211179623480500, guid: 2b3f7c135eac48e41ae0fc79c6ede5a6,
+  warningPrefab: {fileID: 7394974983150459427, guid: c109856bcf368904a9e6a6d3d9eb404e,
     type: 3}
   spawnAreaCollider: {fileID: 2736415326090445300}
   barrelsPerWave: 5
