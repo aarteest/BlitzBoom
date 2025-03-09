@@ -13,7 +13,7 @@ public class ExplosiveBarrel : NetworkBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // Check if the object has the tag "Car" or "Ground"
-        if (collision.gameObject.CompareTag("Car"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             // Spawn the explosion at the barrel's position
             if (explosionPrefab != null)

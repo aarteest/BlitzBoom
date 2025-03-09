@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8622937003484002727}
   - component: {fileID: 4602503018552846759}
   - component: {fileID: 7752559372999282572}
+  - component: {fileID: -210743405663496231}
   - component: {fileID: 4525350110186333150}
   m_Layer: 0
   m_Name: Barrel
@@ -111,6 +112,27 @@ CapsuleCollider:
   m_Height: 0.083698064
   m_Direction: 1
   m_Center: {x: 0, y: -0.0026245327, z: 0.0000000014901161}
+--- !u!114 &-210743405663496231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2674322061292441846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1498857311
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!114 &4525350110186333150
 MonoBehaviour:
   m_ObjectHideFlags: 0

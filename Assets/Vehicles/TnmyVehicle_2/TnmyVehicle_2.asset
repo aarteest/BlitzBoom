@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 4
   displayName: Ank-Edge
+  carInfo: Yeh Pata Nahi Kya Hai
   icon: {fileID: 21300000, guid: 09b191b03bed56d4f8586a7d070db51a, type: 3}
   introPrefab: {fileID: 5626271445700511052, guid: 5364cfbfeb10380429ffbfbb3ee7b60a,
     type: 3}

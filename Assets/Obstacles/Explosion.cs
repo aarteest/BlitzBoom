@@ -17,7 +17,7 @@ public class Explosion : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Car") || other.gameObject.CompareTag("ExplosionBarrel")) // Make sure your car has the "Car" tag!
+        if (other.CompareTag("Player") || other.gameObject.CompareTag("ExplosionBarrel")) // Make sure your car has the "Car" tag!
         {
             Rigidbody rb = other.GetComponent<Rigidbody>();
 
