@@ -25,7 +25,8 @@ public class VehicleDebuff : MonoBehaviour
 	{
 		if (isBlasted) return; // Prevent multiple explosions
 		isBlasted = true;
-
+		Debug.Log("Exploded");
+		
 		// Select a random blast direction from the assigned points
 		int randomIndex = Random.Range(0, blastPoints.Length);
 		Vector3 explosionPosition = blastPoints[randomIndex].position;
@@ -36,7 +37,7 @@ public class VehicleDebuff : MonoBehaviour
 
 		// Disable controls temporarily
 		StartCoroutine(DisableControlsAndRespawn());
-	}
+    }
 
 	private IEnumerator DisableControlsAndRespawn()
 	{

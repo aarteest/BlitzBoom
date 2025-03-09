@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 
-public class Explosion : MonoBehaviour
+public class Explosion : NetworkBehaviour
 {
     public float explosionForce = 80000f; // Stronger force for big mass
     public float explosionRadius = 5f;    // Keeps force concentrated

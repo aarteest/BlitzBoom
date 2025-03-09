@@ -5,7 +5,9 @@ using Unity.Netcode;
 using UnityEngine.Events;
 
 public class BombBehaviour : NetworkBehaviour
-{
+{  
+    public static BombBehaviour instance;
+
     [Header("Bomb Settings")]
     [SerializeField] private float fuseTime = 30f;
     private float currentTimer;
@@ -118,12 +120,13 @@ public class BombBehaviour : NetworkBehaviour
 			debuff?.ApplyExplosion();
 
             networkObject.TrySetParent((NetworkObject)null, true);
-            transform.position = lastValidPosition;
 
-         
-		}
+            //transform.position = lastValidPosition;
 
-		if (bManager != null)
+
+        }
+
+        if (bManager != null)
         {
 
 			//bManager.SpawnBombOnRandomPlayer();
@@ -175,7 +178,9 @@ public class BombBehaviour : NetworkBehaviour
 		if (other.CompareTag("BombWallCollider"))
 		{
 			Debug.Log("Bomb hit a wall! Respawning...");
+            
             bManager.SpawnBombOnRandomPlayer();
+
         }
 
 	}
