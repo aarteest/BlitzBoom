@@ -1460,11 +1460,26 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 310183833311095360, guid: dff153e570e2cc043836fa33d1e42182,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f4ecae922f1781d449d208e17738fd15, type: 2}
+    - target: {fileID: 364107549757164401, guid: dff153e570e2cc043836fa33d1e42182,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8f56b6250a6ef7943b341d2bb0b160b3, type: 2}
     - target: {fileID: 994288854587416780, guid: dff153e570e2cc043836fa33d1e42182,
         type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1120964688074889461, guid: dff153e570e2cc043836fa33d1e42182,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8f56b6250a6ef7943b341d2bb0b160b3, type: 2}
     - target: {fileID: 1243177246351008322, guid: dff153e570e2cc043836fa33d1e42182,
         type: 3}
       propertyPath: m_Name
@@ -1545,11 +1560,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1901925424576768226, guid: dff153e570e2cc043836fa33d1e42182,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8f56b6250a6ef7943b341d2bb0b160b3, type: 2}
+    - target: {fileID: 2210880947344820020, guid: dff153e570e2cc043836fa33d1e42182,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f4ecae922f1781d449d208e17738fd15, type: 2}
+    - target: {fileID: 3512885306003557311, guid: dff153e570e2cc043836fa33d1e42182,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8f56b6250a6ef7943b341d2bb0b160b3, type: 2}
     - target: {fileID: 3833780661015280680, guid: dff153e570e2cc043836fa33d1e42182,
         type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5093294609448122191, guid: dff153e570e2cc043836fa33d1e42182,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f4ecae922f1781d449d208e17738fd15, type: 2}
     - target: {fileID: 5526950127928825725, guid: dff153e570e2cc043836fa33d1e42182,
         type: 3}
       propertyPath: m_TagString
@@ -1560,6 +1595,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6340742657597520009, guid: dff153e570e2cc043836fa33d1e42182,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fcbec0809a5b9c149a7c04a1a88b8c09, type: 2}
     - target: {fileID: 7061298220520949554, guid: dff153e570e2cc043836fa33d1e42182,
         type: 3}
       propertyPath: m_TagString
@@ -1570,6 +1610,16 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7194888279703120325, guid: dff153e570e2cc043836fa33d1e42182,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3b3c1ffdf48b5ec4581fad19c2dbb71f, type: 2}
+    - target: {fileID: 7401099780075126729, guid: dff153e570e2cc043836fa33d1e42182,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08b6ef765e4893f449d10debea4ff2fc, type: 2}
     - target: {fileID: 8456645811522294432, guid: dff153e570e2cc043836fa33d1e42182,
         type: 3}
       propertyPath: m_TagString
@@ -1585,6 +1635,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8901255173073317173, guid: dff153e570e2cc043836fa33d1e42182,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8f56b6250a6ef7943b341d2bb0b160b3, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
