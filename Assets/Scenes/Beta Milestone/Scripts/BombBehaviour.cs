@@ -121,6 +121,8 @@ public class BombBehaviour : NetworkBehaviour
 
             networkObject.TrySetParent((NetworkObject)null, true);
 
+            bManager.SpawnBombOnRandomPlayer();
+
             //transform.position = lastValidPosition;
 
 
