@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   displayName: TeerV
-  carInfo: Bow Jaise Dikne Wali
+  carInfo: "Teerv is a high-speed vehicle inspired by Lord Ram\u2019s bow, with arrow-like
+    precision for swift and focused racing."
   icon: {fileID: 21300000, guid: 6fbe927d2399e1e48a7c96a8ba118015, type: 3}
-  introPrefab: {fileID: 965205373778642884, guid: bda46ad9bf4cf954ba3f62c6eff9a1ed,
+  introPrefab: {fileID: 9101802718864687879, guid: fe97d3acef20ce64a92b73ae196282b3,
     type: 3}
   gameplayPrefab: {fileID: 2885845196110226850, guid: 643f60a37d2d5704397dcf97eb156837,
     type: 3}
