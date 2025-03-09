@@ -24,7 +24,6 @@ public class BombBehaviour : NetworkBehaviour
     private Vector3 lastValidPosition;
 
 
-
     private bool bombPicked = false;
 
     private Rigidbody rb;
@@ -123,20 +122,18 @@ public class BombBehaviour : NetworkBehaviour
             rb.isKinematic = false; // Enable physics again
             rb.detectCollisions = true;
 
-            bManager.SpawnBombOnRandomPlayer();
-
             //transform.position = lastValidPosition;
 
 
         }
 
-        if (bManager != null)
-        {
+  //      if (bManager != null)
+  //      {
 
-			//bManager.SpawnBombOnRandomPlayer();
-            Debug.Log("Asked BombManager To Respawn");
+  //          //bManager.SpawnBombOnRandomPlayer();
+  //          Debug.Log("Asked BombManager To Respawn");
 
-		}
+		//}
         
 
 	}
@@ -197,7 +194,9 @@ public class BombBehaviour : NetworkBehaviour
 
     }
 
-   
+
+
+
 }
 
 

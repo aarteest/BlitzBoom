@@ -18,6 +18,7 @@ TagManager:
   - Ground
   - ExplosionBarrel
   - FxTemporaire
+  - BombWallCollider
   layers:
   - Default
   - TransparentFX
@@ -27,8 +28,8 @@ TagManager:
   - UI
   - Drivable
   - Player
-  - 
-  - 
+  - CheckpointOnly
+  - Checkpoint
   - 
   - 
   - 

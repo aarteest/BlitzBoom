@@ -37,7 +37,7 @@ public class Checkpoints : NetworkBehaviour
 				{
 					if (crossedCarsList.Count < CheckpointManager.instance.GetTotalPlayerCount())
 					{
-						if (!isFirstCheckpoint)
+						if (isFirstCheckpoint)
 						{
 							crossedCarsList.Add(crossedCar);
 							return;
@@ -49,20 +49,20 @@ public class Checkpoints : NetworkBehaviour
 
 							if (isLastCheckpoint)
 							{
-								crossedCar.FinishCurrentLap(lapPoints);
+								crossedCar.FinishCurrentLap(CheckpointManager.instance.currentLapPoints);
 
-								if (lapPoints >= CheckpointManager.instance.pointsPerLap)
+								if (CheckpointManager.instance.currentLapPoints >= CheckpointManager.instance.pointsPerLap)
 								{
-									lapPoints -= CheckpointManager.instance.pointsPerLap;
+									CheckpointManager.instance.currentLapPoints -= CheckpointManager.instance.pointsPerLap;
 								}
 
 
 
-								if (crossedCarsList.Count == CheckpointManager.instance.GetTotalPlayerCount() - 1)
+								if (crossedCarsList.Count >= CheckpointManager.instance.GetTotalPlayerCount())
 								{
 									CheckpointManager.instance.LapFinished();
 
-									lapPoints = maxLapPoints;
+									CheckpointManager.instance.currentLapPoints = CheckpointManager.instance.maxLapPoints;
 
 								}
 							}
@@ -75,6 +75,11 @@ public class Checkpoints : NetworkBehaviour
 
 
 				}
+			}
+
+			else
+			{
+				Debug.Log("Cannot Find Car");
 			}
 		}
 	}
