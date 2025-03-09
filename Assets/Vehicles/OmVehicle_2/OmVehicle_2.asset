@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   displayName: KatXR
+  carInfo: Katxr is a sleek car inspired by the Katyar, with razor-sharp agility
+    for swift and lethal assaults.
   icon: {fileID: 21300000, guid: b82fcb2d107c51c458235e4761828682, type: 3}
-  introPrefab: {fileID: 5035254878483740510, guid: 6a090cc808db039419b15dec89fbac5d,
+  introPrefab: {fileID: 5356061383124205931, guid: a0b4824cd79b2924799fa4890aa02848,
     type: 3}
   gameplayPrefab: {fileID: 4801866628397424537, guid: a0b4824cd79b2924799fa4890aa02848,
     type: 3}

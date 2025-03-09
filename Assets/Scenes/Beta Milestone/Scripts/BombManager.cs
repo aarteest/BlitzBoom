@@ -67,15 +67,15 @@ public class BombManager : NetworkBehaviour
 
     public void SpawnBombOnRandomPlayer()
     {
-        //if (allPlayers.Count == 0) return; 
+        if (allPlayers.Count == 0) return;
 
-        //int randomIndex = Random.Range(0, allPlayers.Count);
+        int randomIndex = Random.Range(0, allPlayers.Count);
 
-        //GameObject chosenPlayer = allPlayers[randomIndex];
+        GameObject chosenPlayer = allPlayers[randomIndex];
 
-        //Transform bombHolder = chosenPlayer.transform.Find("BombHolder");
+        Transform bombHolder = chosenPlayer.transform.Find("BombHolder");
 
-        //StartCoroutine(MoveBomb(bombHolder));
+        StartCoroutine(MoveBomb(bombHolder));
     }
 
     void SpawnBomb()

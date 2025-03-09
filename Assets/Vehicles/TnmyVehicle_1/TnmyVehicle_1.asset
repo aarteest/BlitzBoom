@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   displayName: TriNova
+  carInfo: Trinova is a high-speed vehicle inspired by the Trishul, with triple-thrust
+    power for unrivaled speed and control.
   icon: {fileID: 21300000, guid: 3b01caff54de43e418eb5e8bfb657ce0, type: 3}
-  introPrefab: {fileID: 1243177246351008322, guid: dff153e570e2cc043836fa33d1e42182,
+  introPrefab: {fileID: 9032868042285495549, guid: 4b710b298822ccd4dabdab3a0a979820,
     type: 3}
   gameplayPrefab: {fileID: -2197358365257148464, guid: 4b710b298822ccd4dabdab3a0a979820,
     type: 3}

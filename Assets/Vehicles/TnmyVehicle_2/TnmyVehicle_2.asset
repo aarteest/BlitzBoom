@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 4
   displayName: Ank-Edge
+  carInfo: Ank-Edge is a powerful battleship inspired by the Ankusha, with piercing
+    strikes for unmatched Road dominance.
   icon: {fileID: 21300000, guid: 09b191b03bed56d4f8586a7d070db51a, type: 3}
-  introPrefab: {fileID: 5626271445700511052, guid: 5364cfbfeb10380429ffbfbb3ee7b60a,
+  introPrefab: {fileID: 6752959139099194935, guid: e60af703f59a71445ac5d990d09cd861,
     type: 3}
   gameplayPrefab: {fileID: 6267556048247344251, guid: e60af703f59a71445ac5d990d09cd861,
     type: 3}

@@ -2,24 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Unity.Netcode;
 
-public class PlayerBombTrackerPointSystem : MonoBehaviour
+public class PlayerBombTrackerPointSystem : NetworkBehaviour
 {
 	public TextMeshProUGUI pointsText; // Assign this in the inspector
 	private int totalPoints = 0;
+	[SerializeField] private int pointsPerSecond = 5;
 	private float bombHoldTime = 0f;
 	private bool hasBomb = false;
+	private float timeToAddPoints = 1f;
+	private float previousPointsTime;
 
 	private void Update()
 	{
 		if (hasBomb)
 		{
-			bombHoldTime += Time.deltaTime;
-			int newPoints = Mathf.FloorToInt(bombHoldTime * 5); // 5 points per second
-
-			if (newPoints > totalPoints)
+			if (previousPointsTime < timeToAddPoints)
 			{
-				totalPoints = newPoints;
+				previousPointsTime += Time.deltaTime;
+			}
+
+			else
+			{
+				previousPointsTime = 0;
+				totalPoints += pointsPerSecond;
 				UpdateUI();
 			}
 		}

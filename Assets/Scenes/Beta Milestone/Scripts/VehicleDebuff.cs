@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class VehicleDebuff : MonoBehaviour
 {
+	public static VehicleDebuff Instance;
+
 	public Transform[] blastPoints; // Assign 4 points in Inspector (Front, Back, Left, Right)
 	private Rigidbody rb;
 	private VehicleRespawn respawnScript;
 
-	[SerializeField]
-	private bool isBlasted = false;
+	public bool isBlasted = false;
 
 	[Header("Explosion Settings")]
 	[SerializeField] private float explosionForce = 1000f;
@@ -25,6 +26,9 @@ public class VehicleDebuff : MonoBehaviour
 	{
 		if (isBlasted) return; // Prevent multiple explosions
 		isBlasted = true;
+        Debug.Log("Exploded");
+
+		
 
 		// Select a random blast direction from the assigned points
 		int randomIndex = Random.Range(0, blastPoints.Length);
@@ -34,9 +38,11 @@ public class VehicleDebuff : MonoBehaviour
 		Vector3 forceDirection = (transform.position - explosionPosition).normalized;
 		rb.AddForce(forceDirection * explosionForce + Vector3.up * explosionUpwardModifier, ForceMode.Impulse);
 
+		
+		
 		// Disable controls temporarily
-		StartCoroutine(DisableControlsAndRespawn());
-	}
+		//StartCoroutine(DisableControlsAndRespawn());
+    }
 
 	private IEnumerator DisableControlsAndRespawn()
 	{
@@ -57,7 +63,7 @@ public class VehicleDebuff : MonoBehaviour
 
 		// Re-enable movement
 		GetComponent<JankyCarControl_Multiplayer>().enabled = true;
-		isBlasted = false;
+		//isBlasted = false;
 	}
 
 	public void ResetCar()

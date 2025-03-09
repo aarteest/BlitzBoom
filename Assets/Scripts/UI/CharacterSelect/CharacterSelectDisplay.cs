@@ -16,6 +16,7 @@ public class CharacterSelectDisplay : NetworkBehaviour
     [SerializeField] private PlayerCard[] playerCards;
     [SerializeField] private GameObject characterInfoPanel;
     [SerializeField] private TMP_Text characterNameText;
+    [SerializeField] private TMP_Text carInfoText;
     [SerializeField] private Transform introSpawnPoint;
     [SerializeField] private TMP_Text joinCodeText;
     [SerializeField] private Button lockInButton;
@@ -112,6 +113,8 @@ public class CharacterSelectDisplay : NetworkBehaviour
         }
 
         characterNameText.text = character.DisplayName;
+
+        carInfoText.text = character.CarInfo;
 
         characterInfoPanel.SetActive(true);
 
