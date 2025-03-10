@@ -26,6 +26,8 @@ public class PlayerBombTrackerPointSystem : NetworkBehaviour
 	[SerializeField] private List<GameObject> leaderBoardTextParents = new List<GameObject>();
 	private List<GameObject> spawnedLeaderboardTexts = new List<GameObject>();
 
+	public Character playerCharacter { get; private set; }
+
 	[SerializeField]
 	private GameObject bombOwnerFeedback;
 
@@ -43,8 +45,8 @@ public class PlayerBombTrackerPointSystem : NetworkBehaviour
 		base.OnNetworkSpawn();
 		for(int i = 0; i < 3; i++)
 		{
-			GameObject textParent =  Instantiate(leaderboardTextParentPrefab, leaderBoardPanel.transform);
-			leaderBoardTextParents.Add(textParent);
+			//GameObject textParent =  Instantiate(leaderboardTextParentPrefab, leaderBoardPanel.transform);
+			//leaderBoardTextParents.Add(textParent);
 		}
 	}
 	private void Update()
@@ -172,5 +174,15 @@ public class PlayerBombTrackerPointSystem : NetworkBehaviour
 		livePointsText.text = $"+{lapBonus}"; // Show full lap bonus
 		yield return new WaitForSeconds(1.5f); // Keep it visible for 1.5 sec
 		livePointsText.text = ""; // Clear it after delay
+	}
+
+	public void SetPlayerCharacter(Character character)
+	{
+		playerCharacter = character;
+	}
+
+	public void UpdateFinalCharacterScore()
+	{
+		playerCharacter.SetPlayerScore(totalPoints);
 	}
 }

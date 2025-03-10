@@ -4,58 +4,30 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 
+
 public class LeaderBoardManager : MonoBehaviour
 {
-	// Optionally assign players manually; if empty, they'll be fetched automatically
-	public List<PlayerBombTrackerPointSystem> players;
+	[SerializeField] private CharacterDatabase characterData;
 
-	// Prefab for a leaderboard entry (should contain a TextMeshProUGUI component)
-	public GameObject leaderboardEntryPrefab;
+	public List<Character> playerScores = new List<Character>();
 
-	// Parent transform for the leaderboard UI (e.g., a panel with a Vertical Layout Group)
-	public Transform leaderboardParent;
-
-	// Call this method to update the leaderboard UI
-	public void UpdateLeaderboard()
+	public List<Transform> leaderboardPositionTransform = new List<Transform>();
+	public List<TextMeshProUGUI> leaderboardTexts = new List<TextMeshProUGUI>();
+	private void Start()
 	{
-		// If players list is empty, find all PlayerBombTracker components in the scene
-		if (players == null || players.Count == 0)
+		foreach (Character c in characterData.GetAllCharacters())
 		{
-			players = new List<PlayerBombTrackerPointSystem>(FindObjectsOfType<PlayerBombTrackerPointSystem>());
+			playerScores.Add(c);
 		}
 
-		// Clear any existing leaderboard entries
-		foreach (Transform child in leaderboardParent)
+		playerScores = playerScores.OrderByDescending(n => n.playerScore).ToList();
+
+		for (int i = 0; i < 3; i++)
 		{
-			Destroy(child.gameObject);
-		}
-
-		// Sort the players by their points in descending order
-		List<PlayerBombTrackerPointSystem> sortedPlayers = players.OrderByDescending(p => p.GetTotalPoints()).ToList();
-
-		// Create a leaderboard entry for each player
-		for (int i = 0; i < sortedPlayers.Count; i++)
-		{
-			GameObject entryObj = Instantiate(leaderboardEntryPrefab, leaderboardParent);
-			TextMeshProUGUI entryText = entryObj.GetComponent<TextMeshProUGUI>();
-
-			// Choose a rank prefix (using emojis for top 3 if desired)
-			string rankPrefix = "";
-			if (i == 0)
-				rankPrefix = "1st: ";
-			else if (i == 1)
-				rankPrefix = "2nd: ";
-			else if (i == 2)
-				rankPrefix = "3rd: ";
-			else
-				rankPrefix = (i + 1) + "th: ";
-
-			// Get the player's name and points
-			string playerName = sortedPlayers[i].gameObject.name;
-			int points = sortedPlayers[i].GetTotalPoints();
-
-			// Display the rank, player's name, and their points
-			entryText.text = rankPrefix + playerName + " - " + points;
+			Instantiate(playerScores[i].IntroPrefab, leaderboardPositionTransform[i]);
+			leaderboardTexts[i].text = $"{i+1}) {playerScores[i].DisplayName}: {playerScores[i].playerScore}";
 		}
 	}
+
+
 }
