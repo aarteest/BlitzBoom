@@ -16,13 +16,17 @@ public class VehicleDebuff : MonoBehaviour
 	[SerializeField] private float explosionForce = 1000f;
 	[SerializeField] private float explosionUpwardModifier = 2f;
 
-	private void Start()
+    BombManager bManager;
+
+
+    private void Start()
 	{
 		rb = GetComponent<Rigidbody>();
 		respawnScript = GetComponent<VehicleRespawn>();
-	}
+        bManager = GameObject.FindObjectOfType<BombManager>().GetComponent<BombManager>();
+    }
 
-	public void ApplyExplosion()
+    public void ApplyExplosion()
 	{
 		if (isBlasted) return; // Prevent multiple explosions
 		isBlasted = true;
@@ -38,8 +42,9 @@ public class VehicleDebuff : MonoBehaviour
 		Vector3 forceDirection = (transform.position - explosionPosition).normalized;
 		rb.AddForce(forceDirection * explosionForce + Vector3.up * explosionUpwardModifier, ForceMode.Impulse);
 
-		
-		
+		bManager.SpawnBomb();
+		Debug.Log("Bomb Exploded Should Spawn");
+
 		// Disable controls temporarily
 		//StartCoroutine(DisableControlsAndRespawn());
     }

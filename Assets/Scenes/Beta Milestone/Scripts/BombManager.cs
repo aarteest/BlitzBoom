@@ -78,7 +78,7 @@ public class BombManager : NetworkBehaviour
         StartCoroutine(MoveBomb(bombHolder));
     }
 
-    void SpawnBomb()
+    public void SpawnBomb()
     {
         if (IsServer)
         {
@@ -95,7 +95,7 @@ public class BombManager : NetworkBehaviour
 
             spawnedBomb = Instantiate(loadedPrefab, Vector3.zero, Quaternion.identity);
             spawnedBomb.GetComponent<NetworkObject>().Spawn(); // Spawn for all clients
-            spawnedBomb.GetComponent<Rigidbody>().isKinematic = true;
+            //spawnedBomb.GetComponent<Rigidbody>().isKinematic = true;
             spawnedBomb.GetComponent<BombBehaviour>().enabled = false;
 
             if (spawnedBomb != null)

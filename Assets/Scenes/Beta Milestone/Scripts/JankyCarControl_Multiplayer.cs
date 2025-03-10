@@ -70,7 +70,8 @@ public class JankyCarControl_Multiplayer : NetworkBehaviour
         GroundCheck();
         CalculateCarVelocity();
 
-        if (!IsOwner || finishedLapCount >= CheckpointManager.instance.totalLaps) return;
+        //if (!IsOwner || finishedLapCount >= CheckpointManager.instance.totalLaps) return;
+        if (!IsOwner) return;
 
         float moveInput = Input.GetAxis("Vertical");
         float turnInput = Input.GetAxis("Horizontal");
