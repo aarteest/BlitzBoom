@@ -17,15 +17,23 @@ public class LeaderBoardManager : MonoBehaviour
 	{
 		foreach (Character c in characterData.GetAllCharacters())
 		{
+			if (c.playerScore > 0)
+			{
 			playerScores.Add(c);
+
+			}
 		}
 
 		playerScores = playerScores.OrderByDescending(n => n.playerScore).ToList();
 
 		for (int i = 0; i < 3; i++)
 		{
-			Instantiate(playerScores[i].IntroPrefab, leaderboardPositionTransform[i]);
+			if (i < playerScores.Count)
+			{
+			Instantiate(playerScores[i].VictoryPrefab, leaderboardPositionTransform[i]);
 			leaderboardTexts[i].text = $"{i+1}) {playerScores[i].DisplayName}: {playerScores[i].playerScore}";
+
+			}
 		}
 	}
 

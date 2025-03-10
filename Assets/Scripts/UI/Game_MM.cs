@@ -33,4 +33,14 @@ public class Game_MM : MonoBehaviour
             Debug.LogError("Scene name is not assigned!");
         }
     }
+
+    public void QuitGame()
+    {
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
+    }
+
 }

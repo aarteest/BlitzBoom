@@ -43,11 +43,7 @@ public class PlayerBombTrackerPointSystem : NetworkBehaviour
 	public override void OnNetworkSpawn()
 	{
 		base.OnNetworkSpawn();
-		for(int i = 0; i < 3; i++)
-		{
-			//GameObject textParent =  Instantiate(leaderboardTextParentPrefab, leaderBoardPanel.transform);
-			//leaderBoardTextParents.Add(textParent);
-		}
+		AddToTotalPoints(1);
 	}
 	private void Update()
 	{
@@ -124,8 +120,10 @@ public class PlayerBombTrackerPointSystem : NetworkBehaviour
 			Destroy(spawnedText);
 		}
 		spawnedLeaderboardTexts.Clear();
-		leaderBoardPanel.SetActive(true);
 
+		if (leaderBoardPanel != null)
+		{
+		leaderBoardPanel.SetActive(true);
 		foreach (var key in CheckpointManager.instance.GetLeaderboard().Keys)
 		{
 			GameObject _leaderBoardText = Instantiate(leaderBoardTextPrefab, leaderBoardPanel.transform);
@@ -135,6 +133,8 @@ public class PlayerBombTrackerPointSystem : NetworkBehaviour
 				spawnedLeaderboardTexts.Add(_leaderBoardText);
 			}
 		}
+		}
+
 	}
 
 	public void SetPlayerString(string _playerName)

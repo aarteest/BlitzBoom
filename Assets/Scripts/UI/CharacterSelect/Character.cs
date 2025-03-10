@@ -10,7 +10,8 @@ public class Character : ScriptableObject
     [SerializeField] private Sprite icon;
     [SerializeField] private GameObject introPrefab;
     [SerializeField] private NetworkObject gameplayPrefab;
-    public int playerScore { get; private set; }
+    [SerializeField] private GameObject victoryPrefab;
+    public int playerScore;
 
     public int Id => id;
     public string DisplayName => displayName;
@@ -19,6 +20,8 @@ public class Character : ScriptableObject
     public Sprite Icon => icon;
     public GameObject IntroPrefab => introPrefab;
     public NetworkObject GameplayPrefab => gameplayPrefab;
+
+    public GameObject VictoryPrefab => victoryPrefab;
 
     public void SetPlayerScore(int score)
     {
