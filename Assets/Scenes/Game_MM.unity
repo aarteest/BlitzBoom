@@ -24559,13 +24559,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3937478097969931625, guid: a6cf3620c13b9784a97f5341c757e16c,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937478097969931625, guid: a6cf3620c13b9784a97f5341c757e16c,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1689073132}
     - target: {fileID: 3937478097969931625, guid: a6cf3620c13b9784a97f5341c757e16c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene
+      value: QuitGame
       objectReference: {fileID: 0}
     - target: {fileID: 3937478097969931625, guid: a6cf3620c13b9784a97f5341c757e16c,
         type: 3}
