@@ -520,7 +520,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &381142206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6420,7 +6420,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ae31b0cd1c3050b4e8c28aa698927ef5, type: 2}
+      objectReference: {fileID: 2100000, guid: 7b584f24b471f28458be67b5714ba9d4, type: 2}
     - target: {fileID: -5115195617409069828, guid: d76ba3e1a527abc48ab5a0c45fe3c2b8,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -6446,6 +6446,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.36377656
       objectReference: {fileID: 0}
+    - target: {fileID: -4830548618574930462, guid: d76ba3e1a527abc48ab5a0c45fe3c2b8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b584f24b471f28458be67b5714ba9d4, type: 2}
     - target: {fileID: -4722298616861944787, guid: d76ba3e1a527abc48ab5a0c45fe3c2b8,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -6581,6 +6586,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1.3198094
       objectReference: {fileID: 0}
+    - target: {fileID: -2005254371454720145, guid: d76ba3e1a527abc48ab5a0c45fe3c2b8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b584f24b471f28458be67b5714ba9d4, type: 2}
     - target: {fileID: -1728488492740627180, guid: d76ba3e1a527abc48ab5a0c45fe3c2b8,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -6609,6 +6619,11 @@ PrefabInstance:
     - target: {fileID: -1629165376907388269, guid: d76ba3e1a527abc48ab5a0c45fe3c2b8,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: ae31b0cd1c3050b4e8c28aa698927ef5, type: 2}
+    - target: {fileID: -1629165376907388269, guid: d76ba3e1a527abc48ab5a0c45fe3c2b8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: ae31b0cd1c3050b4e8c28aa698927ef5, type: 2}
     - target: {fileID: -1629165376907388269, guid: d76ba3e1a527abc48ab5a0c45fe3c2b8,
@@ -6925,7 +6940,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 6131903ed45cfa645ac7b355abb1537a, type: 2}
+      objectReference: {fileID: 2100000, guid: ae31b0cd1c3050b4e8c28aa698927ef5, type: 2}
     - target: {fileID: 4095779613508879643, guid: d76ba3e1a527abc48ab5a0c45fe3c2b8,
         type: 3}
       propertyPath: m_Materials.Array.data[2]
