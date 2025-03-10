@@ -19,9 +19,11 @@ public class PlayerBombTrackerPointSystem : NetworkBehaviour
 	private float previousPointsTime;
 	public TextMeshProUGUI currentLapText;
 	public GameObject leaderBoardTextPrefab;
+	[SerializeField]
+	private GameObject leaderboardTextParentPrefab;
 	private string playerName;
-	[SerializeField] private GameObject leaaderBoardPanel;
-
+	[SerializeField] private GameObject leaderBoardPanel;
+	[SerializeField] private List<GameObject> leaderBoardTextParents = new List<GameObject>();
 	private List<GameObject> spawnedLeaderboardTexts = new List<GameObject>();
 
 	[SerializeField]
@@ -31,15 +33,19 @@ public class PlayerBombTrackerPointSystem : NetworkBehaviour
 	{
 		totalPoints = 0;
 
-		if (leaaderBoardPanel != null)
-			leaaderBoardPanel.SetActive(false);
+		if (leaderBoardPanel != null)
+			leaderBoardPanel.SetActive(false);
 
 	}
 
 	public override void OnNetworkSpawn()
 	{
 		base.OnNetworkSpawn();
-
+		for(int i = 0; i < 3; i++)
+		{
+			GameObject textParent =  Instantiate(leaderboardTextParentPrefab, leaderBoardPanel.transform);
+			leaderBoardTextParents.Add(textParent);
+		}
 	}
 	private void Update()
 	{
@@ -116,11 +122,11 @@ public class PlayerBombTrackerPointSystem : NetworkBehaviour
 			Destroy(spawnedText);
 		}
 		spawnedLeaderboardTexts.Clear();
-		leaaderBoardPanel.SetActive(true);
+		leaderBoardPanel.SetActive(true);
 
 		foreach (var key in CheckpointManager.instance.GetLeaderboard().Keys)
 		{
-			GameObject _leaderBoardText = Instantiate(leaderBoardTextPrefab, leaaderBoardPanel.transform);
+			GameObject _leaderBoardText = Instantiate(leaderBoardTextPrefab, leaderBoardPanel.transform);
 			if (_leaderBoardText.TryGetComponent<TextMeshProUGUI>(out TextMeshProUGUI text))
 			{
 				text.text = $"{key.playerName}: {CheckpointManager.instance.GetLeaderboard()[key]}";
