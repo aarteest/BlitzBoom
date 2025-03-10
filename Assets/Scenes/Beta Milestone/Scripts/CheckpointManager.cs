@@ -9,11 +9,10 @@ public class CheckpointManager : NetworkBehaviour
 
 	private List<Checkpoints> checkpoints = new List<Checkpoints>();
 	private Dictionary<PlayerBombTrackerPointSystem, int> leaderBoard = new Dictionary<PlayerBombTrackerPointSystem, int> { };
+	private List<PlayerBombTrackerPointSystem> playerScripts = new List<PlayerBombTrackerPointSystem>();
 
 	[SerializeField] private int lapCount;
 	public int maxLapPoints;
-
-	private List<GameObject> totalPlayers = new List<GameObject>();
 
 	public int totalLaps;
 	public int pointsPerLap = 10000;
@@ -77,9 +76,12 @@ public class CheckpointManager : NetworkBehaviour
 			// Only add players that have a BombHolder
 			foreach (GameObject player in players)
 			{
-				if (player.transform.Find("BombHolder") != null)
+				if (player.TryGetComponent<PlayerBombTrackerPointSystem>(out PlayerBombTrackerPointSystem playerScript))
 				{
-					totalPlayers.Add(player);
+					if (playerScripts.Contains(playerScript))
+					{
+						playerScripts.Add(playerScript);
+					}
 				}
 			}
 
@@ -91,7 +93,7 @@ public class CheckpointManager : NetworkBehaviour
 
 	public int GetTotalPlayerCount()
 	{
-		return totalPlayers.Count;
+		return playerScripts.Count;
 	}
 
 	public void AddPlayerToLeaderboard(PlayerBombTrackerPointSystem playerScript, int playerScore)
@@ -107,7 +109,10 @@ public class CheckpointManager : NetworkBehaviour
 			_playerScript.UpdateLeaderboardUI();
 		}
 	}
+	public void UpdateLeaderboardRanking()
+	{
 
+	}
 	public Dictionary<PlayerBombTrackerPointSystem, int> GetLeaderboard()
 	{
 		return leaderBoard;

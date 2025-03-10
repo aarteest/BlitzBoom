@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 6
   displayName: AsiVega
   carInfo: Mar Kyu Nahi Gya Mein
-  icon: {fileID: 21300000, guid: f17530a9429771c418cc8782a6154053, type: 3}
+  icon: {fileID: 21300000, guid: 14698f422e22080418cfab1622a9f6f8, type: 3}
   introPrefab: {fileID: 4665308337668532153, guid: 43a7bd3bc52c69741a253bcd71ac194f,
     type: 3}
   gameplayPrefab: {fileID: 441853544039876054, guid: 24b088d754a1c9045807208e2cc3d74c,
