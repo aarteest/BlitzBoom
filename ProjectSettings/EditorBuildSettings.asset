@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Final Beta Playtest Tracks/Map 5.unity
     guid: 33d413a5c3ae83c4a80082905426012d
+  - enabled: 1
+    path: Assets/Victory screen.unity
+    guid: a6b0a45e76164a942a0cf43f1521d802
   m_configObjects: {}
