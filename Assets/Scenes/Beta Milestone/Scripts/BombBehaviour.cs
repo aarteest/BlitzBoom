@@ -30,6 +30,12 @@ public class BombBehaviour : NetworkBehaviour
 
     BombManager bManager;
 
+    [SerializeField]
+    private float withoutHolderCountDown = 5f;
+    private float withoutHolderTimer;
+    
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -37,7 +43,7 @@ public class BombBehaviour : NetworkBehaviour
         bManager = GameObject.FindObjectOfType<BombManager>().GetComponent<BombManager>();
         ResetBomb();
 
-       
+       withoutHolderTimer = withoutHolderCountDown;
     }
 
     private void Update()
@@ -55,6 +61,20 @@ public class BombBehaviour : NetworkBehaviour
                 bombPicked = false;
             }
         }
+
+        if (currentHolder == null)
+        {
+            withoutHolderTimer -= Time.deltaTime;
+            if (withoutHolderTimer <= 0f)
+            {
+                bManager.SpawnBomb();
+                Destroy(gameObject);
+                Debug.Log("Bomb Exploded Without Holder");
+            }
+
+            
+        }
+
     }
 
     public void PickUp(GameObject vehicle)
@@ -96,7 +116,7 @@ public class BombBehaviour : NetworkBehaviour
         {
             // Detach properly using Netcode
             networkObject.TrySetParent((NetworkObject)null, true);
-            rb.isKinematic = true; // Enable physics again
+            rb.isKinematic = false; // Enable physics again
             rb.detectCollisions = true;
             rb.AddForce(currentHolder.transform.forward * throwDistance, ForceMode.Impulse);
 
@@ -178,6 +198,8 @@ public class BombBehaviour : NetworkBehaviour
 		{
 			Debug.Log("Bomb hit a wall! Respawning...");
             
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
             bManager.SpawnBombOnRandomPlayer();
 
         }
