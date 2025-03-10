@@ -55,9 +55,6 @@ public class BombBehaviour : NetworkBehaviour
                 bombPicked = false;
             }
         }
-
-
-
     }
 
     public void PickUp(GameObject vehicle)
@@ -121,7 +118,7 @@ public class BombBehaviour : NetworkBehaviour
             networkObject.TrySetParent((NetworkObject)null, true);
             rb.isKinematic = false; // Enable physics again
             rb.detectCollisions = true;
-
+            Destroy(gameObject);
             //transform.position = lastValidPosition;
 
 
