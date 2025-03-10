@@ -19,9 +19,11 @@ public class PlayerBombTrackerPointSystem : NetworkBehaviour
 	private float previousPointsTime;
 	public TextMeshProUGUI currentLapText;
 	public GameObject leaderBoardTextPrefab;
+	[SerializeField]
+	private GameObject leaderboardTextParentPrefab;
 	private string playerName;
-	[SerializeField] private GameObject leaaderBoardPanel;
-
+	[SerializeField] private GameObject leaderBoardPanel;
+	[SerializeField] private List<GameObject> leaderBoardTextParents = new List<GameObject>();
 	private List<GameObject> spawnedLeaderboardTexts = new List<GameObject>();
 
 	[SerializeField]
@@ -31,15 +33,19 @@ public class PlayerBombTrackerPointSystem : NetworkBehaviour
 	{
 		totalPoints = 0;
 
-		if(leaaderBoardPanel != null)
-		leaaderBoardPanel.SetActive(false);
+		if (leaderBoardPanel != null)
+			leaderBoardPanel.SetActive(false);
 
 	}
 
 	public override void OnNetworkSpawn()
 	{
 		base.OnNetworkSpawn();
-
+		for(int i = 0; i < 3; i++)
+		{
+			GameObject textParent =  Instantiate(leaderboardTextParentPrefab, leaderBoardPanel.transform);
+			leaderBoardTextParents.Add(textParent);
+		}
 	}
 	private void Update()
 	{
@@ -116,11 +122,11 @@ public class PlayerBombTrackerPointSystem : NetworkBehaviour
 			Destroy(spawnedText);
 		}
 		spawnedLeaderboardTexts.Clear();
-		leaaderBoardPanel.SetActive(true);
+		leaderBoardPanel.SetActive(true);
 
 		foreach (var key in CheckpointManager.instance.GetLeaderboard().Keys)
 		{
-			GameObject _leaderBoardText = Instantiate(leaderBoardTextPrefab, leaaderBoardPanel.transform);
+			GameObject _leaderBoardText = Instantiate(leaderBoardTextPrefab, leaderBoardPanel.transform);
 			if (_leaderBoardText.TryGetComponent<TextMeshProUGUI>(out TextMeshProUGUI text))
 			{
 				text.text = $"{key.playerName}: {CheckpointManager.instance.GetLeaderboard()[key]}";
@@ -143,8 +149,28 @@ public class PlayerBombTrackerPointSystem : NetworkBehaviour
 	{
 		if (livePointsText != null)
 		{
-			livePointsText.text = _livePoints.ToString();
+			if (_livePoints >= 1000) // Large lap bonus
+			{
+				StartCoroutine(ShowLapBonus(_livePoints));
+			}
+			else
+			{
+				StartCoroutine(ShowLivePointIncrements(_livePoints));
+			}
 		}
+	}
 
+	private IEnumerator ShowLivePointIncrements(int pointsToAdd)
+	{
+			livePointsText.text = $"+{pointsToAdd}"; // Show "+1" for each small increment
+			yield return new WaitForSeconds(0.2f); // Small delay between each "+1"
+		    livePointsText.text = ""; // Clear the text after all increments
+	}
+
+	private IEnumerator ShowLapBonus(int lapBonus)
+	{
+		livePointsText.text = $"+{lapBonus}"; // Show full lap bonus
+		yield return new WaitForSeconds(1.5f); // Keep it visible for 1.5 sec
+		livePointsText.text = ""; // Clear it after delay
 	}
 }
