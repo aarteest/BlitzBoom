@@ -96,7 +96,7 @@ public class BombBehaviour : NetworkBehaviour
         {
             // Detach properly using Netcode
             networkObject.TrySetParent((NetworkObject)null, true);
-            rb.isKinematic = false; // Enable physics again
+            rb.isKinematic = true; // Enable physics again
             rb.detectCollisions = true;
             rb.AddForce(currentHolder.transform.forward * throwDistance, ForceMode.Impulse);
 
@@ -119,6 +119,7 @@ public class BombBehaviour : NetworkBehaviour
             rb.isKinematic = false; // Enable physics again
             rb.detectCollisions = true;
             Destroy(gameObject);
+
             //transform.position = lastValidPosition;
 
 
