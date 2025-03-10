@@ -985,6 +985,7 @@ MonoBehaviour:
   accelerationSFX: {fileID: 8762139749203494420}
   idleSFX: {fileID: 340190015361222077}
   bombHolder: {fileID: 0}
+  explosionVFX: {fileID: 0}
 --- !u!114 &-2348752988649443486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -992,7 +993,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5356061383124205931}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cba392d285b4bb479a7270f48d3990c, type: 3}
   m_Name: 
@@ -1065,7 +1066,9 @@ MonoBehaviour:
   currentLapText: {fileID: 4808865180655535560}
   leaderBoardTextPrefab: {fileID: 6602956817521952059, guid: 0bd16fe2d6981e24082e542c240079bd,
     type: 3}
-  leaaderBoardPanel: {fileID: 1397107285623436659}
+  leaderboardTextParentPrefab: {fileID: 0}
+  leaderBoardPanel: {fileID: 0}
+  leaderBoardTextParents: []
   bombOwnerFeedback: {fileID: 6285034222399225033}
 --- !u!82 &340190015361222077
 AudioSource:
@@ -1355,7 +1358,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00061035156, y: 0.000015258789}
+  m_AnchoredPosition: {x: -0.00061035156, y: 0}
   m_SizeDelta: {x: 197, y: 110.75122}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6906285153419625415

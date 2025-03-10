@@ -879,6 +879,7 @@ MonoBehaviour:
   accelerationSFX: {fileID: 8747120402794602665}
   idleSFX: {fileID: 2644182582097563257}
   bombHolder: {fileID: 0}
+  explosionVFX: {fileID: 0}
 --- !u!114 &4870738243127323739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -886,7 +887,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5356061383124205931}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cba392d285b4bb479a7270f48d3990c, type: 3}
   m_Name: 
@@ -954,11 +955,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsText: {fileID: 345793346541171073}
+  livePointsText: {fileID: 0}
   pointsPerSecond: 5
   currentLapText: {fileID: 8675907212362088281}
   leaderBoardTextPrefab: {fileID: 6602956817521952059, guid: 0bd16fe2d6981e24082e542c240079bd,
     type: 3}
-  leaaderBoardPanel: {fileID: 4493377257899507512}
+  leaderboardTextParentPrefab: {fileID: 0}
+  leaderBoardPanel: {fileID: 0}
+  leaderBoardTextParents: []
   bombOwnerFeedback: {fileID: 0}
 --- !u!82 &2644182582097563257
 AudioSource:
@@ -1252,7 +1256,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00015258789, y: 0.000030517578}
+  m_AnchoredPosition: {x: -0.00012207031, y: 0}
   m_SizeDelta: {x: 197, y: 110.75122}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2657986653588927118
