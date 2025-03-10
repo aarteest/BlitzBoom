@@ -50,6 +50,11 @@ public class CheckpointManager : NetworkBehaviour
 		}
 
 		lapCount++;
+
+		if (lapCount >= totalLaps)
+		{
+
+		}
 		//Debug.Log(lapCount);
 	}
 

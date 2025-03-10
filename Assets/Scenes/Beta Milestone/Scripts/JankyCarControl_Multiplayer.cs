@@ -222,6 +222,7 @@ public class JankyCarControl_Multiplayer : NetworkBehaviour
 			if (finishedLapCount >= CheckpointManager.instance.totalLaps)
             {
                 CheckpointManager.instance.AddPlayerToLeaderboard(pointSystem, pointSystem.totalPoints);
+                pointSystem.UpdateFinalCharacterScore();
             }
             Debug.Log($"Gained {points} points");
         }

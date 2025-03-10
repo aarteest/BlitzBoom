@@ -44,6 +44,7 @@ public class CharacterSpawner : NetworkBehaviour
                 if (characterInstance.TryGetComponent<PlayerBombTrackerPointSystem>(out PlayerBombTrackerPointSystem playerScript))
                 {
                     playerScript.SetPlayerString(character.DisplayName);
+                    playerScript.SetPlayerCharacter(character);
                 }
                 //characterInstance.SpawnAsPlayerObject(client.Value.clientId);
                 Debug.Log($"Character ownership assigned to Client ID: {characterInstance.OwnerClientId}");
