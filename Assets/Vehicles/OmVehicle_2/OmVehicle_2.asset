@@ -21,3 +21,6 @@ MonoBehaviour:
     type: 3}
   gameplayPrefab: {fileID: 4801866628397424537, guid: a0b4824cd79b2924799fa4890aa02848,
     type: 3}
+  victoryPrefab: {fileID: 6542878801979831549, guid: 13f2df03cfcd0704d9afa55172a82ea3,
+    type: 3}
+  playerScore: 0

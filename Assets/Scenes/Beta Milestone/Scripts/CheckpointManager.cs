@@ -85,7 +85,7 @@ public class CheckpointManager : NetworkBehaviour
 			{
 				if (player.TryGetComponent<PlayerBombTrackerPointSystem>(out PlayerBombTrackerPointSystem playerScript))
 				{
-					if (playerScripts.Contains(playerScript))
+					if (!playerScripts.Contains(playerScript))
 					{
 						playerScripts.Add(playerScript);
 					}
