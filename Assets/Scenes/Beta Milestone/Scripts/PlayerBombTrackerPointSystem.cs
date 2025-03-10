@@ -8,6 +8,7 @@ using UnityEngine.InputSystem.iOS;
 public class PlayerBombTrackerPointSystem : NetworkBehaviour
 {
 	public TextMeshProUGUI pointsText; // Assign this in the inspector
+	public TextMeshProUGUI livePointsText;
 	public int totalPoints { get; private set; }
 	[SerializeField] private int pointsPerSecond = 5;
 	private float bombHoldTime = 0f;
@@ -46,7 +47,7 @@ public class PlayerBombTrackerPointSystem : NetworkBehaviour
 			else
 			{
 				previousPointsTime = 0;
-				totalPoints += pointsPerSecond;
+				AddToTotalPoints(pointsPerSecond);
 				UpdateUI();
 			}
 		}
@@ -92,6 +93,7 @@ public class PlayerBombTrackerPointSystem : NetworkBehaviour
 	{
 		totalPoints += newPoints;
 		UpdateUI();
+		UpdateLivePoints(newPoints);
 	}
 
 	public void UpdateLeaderboardUI()
@@ -122,5 +124,14 @@ public class PlayerBombTrackerPointSystem : NetworkBehaviour
 	public string GetPlayerString()
 	{
 		return playerName;
+	}
+
+	public void UpdateLivePoints(int _livePoints)
+	{
+		if (livePointsText != null)
+		{
+			livePointsText.text = _livePoints.ToString();
+		}
+
 	}
 }
