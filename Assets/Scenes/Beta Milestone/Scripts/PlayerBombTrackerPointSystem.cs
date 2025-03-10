@@ -31,8 +31,8 @@ public class PlayerBombTrackerPointSystem : NetworkBehaviour
 	{
 		totalPoints = 0;
 
-		if(leaaderBoardPanel != null)
-		leaaderBoardPanel.SetActive(false);
+		if (leaaderBoardPanel != null)
+			leaaderBoardPanel.SetActive(false);
 
 	}
 
@@ -143,8 +143,28 @@ public class PlayerBombTrackerPointSystem : NetworkBehaviour
 	{
 		if (livePointsText != null)
 		{
-			livePointsText.text = _livePoints.ToString();
+			if (_livePoints >= 1000) // Large lap bonus
+			{
+				StartCoroutine(ShowLapBonus(_livePoints));
+			}
+			else
+			{
+				StartCoroutine(ShowLivePointIncrements(_livePoints));
+			}
 		}
+	}
 
+	private IEnumerator ShowLivePointIncrements(int pointsToAdd)
+	{
+			livePointsText.text = $"+{pointsToAdd}"; // Show "+1" for each small increment
+			yield return new WaitForSeconds(0.2f); // Small delay between each "+1"
+		    livePointsText.text = ""; // Clear the text after all increments
+	}
+
+	private IEnumerator ShowLapBonus(int lapBonus)
+	{
+		livePointsText.text = $"+{lapBonus}"; // Show full lap bonus
+		yield return new WaitForSeconds(1.5f); // Keep it visible for 1.5 sec
+		livePointsText.text = ""; // Clear it after delay
 	}
 }
