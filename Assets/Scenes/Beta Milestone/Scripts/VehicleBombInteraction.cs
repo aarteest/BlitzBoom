@@ -62,7 +62,7 @@ public class VehicleBombInteraction : NetworkBehaviour
     //}
     private void Update()
     {
-        if (IsOwner && Input.GetKeyDown(KeyCode.T)) // Ensure only the local player can trigger
+        if (IsOwner && Input.GetKeyDown(KeyCode.T) || IsOwner &&  Input.GetButtonDown("ControllerThrow")) // Ensure only the local player can trigger
         {
             RequestBombServerRPC();
             
