@@ -4,6 +4,8 @@ using TMPro;
 using UnityEngine;
 using Unity.Netcode;
 using UnityEngine.InputSystem.iOS;
+using Unity.UI;
+
 
 public class PlayerBombTrackerPointSystem : NetworkBehaviour
 {
@@ -20,7 +22,11 @@ public class PlayerBombTrackerPointSystem : NetworkBehaviour
 	private string playerName;
 	[SerializeField] private GameObject leaaderBoardPanel;
 
-	private List<GameObject> spawnedLeaderboardTexts = new List<GameObject>(); 
+	private List<GameObject> spawnedLeaderboardTexts = new List<GameObject>();
+
+	[SerializeField]
+	private GameObject bombOwnerFeedback;
+
 	private void Awake()
 	{
 		totalPoints = 0;
@@ -50,6 +56,12 @@ public class PlayerBombTrackerPointSystem : NetworkBehaviour
 				AddToTotalPoints(pointsPerSecond);
 				UpdateUI();
 			}
+
+			bombOwnerFeedback.SetActive(true);
+		}
+		else
+		{
+			bombOwnerFeedback.SetActive(false);
 		}
 	}
 
@@ -61,6 +73,7 @@ public class PlayerBombTrackerPointSystem : NetworkBehaviour
 	public void DropBomb()
 	{
 		hasBomb = false;
+		bombOwnerFeedback?.SetActive(false);
 	}
 
 	public int GetTotalPoints()

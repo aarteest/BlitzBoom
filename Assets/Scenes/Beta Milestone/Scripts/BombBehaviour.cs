@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 using UnityEngine.Events;
-
+using UnityEngine.UI;
 public class BombBehaviour : NetworkBehaviour
 {  
     public static BombBehaviour instance;
@@ -33,7 +33,6 @@ public class BombBehaviour : NetworkBehaviour
     [SerializeField]
     private float withoutHolderCountDown = 5f;
     private float withoutHolderTimer;
-    
 
 
     private void Start()
