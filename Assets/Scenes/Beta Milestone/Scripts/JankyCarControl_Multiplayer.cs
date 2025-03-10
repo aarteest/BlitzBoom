@@ -79,9 +79,11 @@ public class JankyCarControl_Multiplayer : NetworkBehaviour
 
         float moveInput = Input.GetAxis("Vertical");
         float turnInput = Input.GetAxis("Horizontal");
+        float controllerMoveInput = Input.GetAxis("AccelerationAxis");
+        float controllerTurnInput = Input.GetAxis("TurningAxis");
 
-		// Play acceleration sound if moving, otherwise play idle sound
-		if (moveInput != 0)
+        // Play acceleration sound if moving, otherwise play idle sound
+        if (moveInput != 0)
 		{
 			if (!accelerationSFX.isPlaying)
 			{
@@ -98,9 +100,9 @@ public class JankyCarControl_Multiplayer : NetworkBehaviour
 			}
 		}
 
-		if (moveInput != 0 || turnInput != 0)
+		if (moveInput != 0 || turnInput != 0 || controllerMoveInput != 0 || controllerTurnInput != 0)
         {
-            SubmitMovementServerRpc(moveInput, turnInput);
+            SubmitMovementServerRpc(moveInput, turnInput, controllerMoveInput, controllerTurnInput);
         }
 
 
@@ -108,7 +110,7 @@ public class JankyCarControl_Multiplayer : NetworkBehaviour
     }
 
     [ServerRpc(RequireOwnership = false)]
-    public void SubmitMovementServerRpc(float moveInput, float turnInput)
+    public void SubmitMovementServerRpc(float moveInput, float turnInput, float controllerMoveInput, float controllerTurnInput)
     {
         if (isGrounded)
         {
@@ -116,6 +118,12 @@ public class JankyCarControl_Multiplayer : NetworkBehaviour
             Deceleration();
             Turn(turnInput);
             SideWaysDrag();
+
+
+            ControllerAcceleration(controllerMoveInput);
+            ControllerDeceleration();
+            ControllerTurn(controllerTurnInput);
+            ControllerSideWaysDrag();
         }
         
 
@@ -232,6 +240,70 @@ public class JankyCarControl_Multiplayer : NetworkBehaviour
     {
         return finishedLapCount;
     }
+
+
+
+    //Controller Inputs////////////
+
+    private void ControllerAcceleration(float controllerMoveInput)
+    {
+        if (currentCarLocalVelocity.z < maxSpeed)
+        {
+            carRB.AddForceAtPosition(acceleration * controllerMoveInput * transform.forward, accelerationPoint.position, ForceMode.Acceleration);
+
+        }
+        //Debug.Log(currentCarLocalVelocity.z);
+    }
+
+    //private void ControllerDeceleration()
+    //{
+    //    carRB.AddForce((Input.GetAxis("AccelerationAxis") ? brakingDeceleration : deceleration) * carVelocityRatio * -carRB.transform.forward, ForceMode.Acceleration);
+    //}
+
+    private void ControllerDeceleration()
+    {
+        float brakeInput = Input.GetAxis("BreakingAxis"); // Get the brake input value
+
+        // Determine whether to apply braking or normal deceleration based on input
+        float decelerationForce = (brakeInput > 0.1f) ? brakingDeceleration : deceleration;
+
+        carRB.AddForce(decelerationForce * carVelocityRatio * -carRB.transform.forward, ForceMode.Acceleration);
+    }
+
+
+    private void ControllerTurn(float controllerTurnInput)
+    {
+        carRB.AddTorque(steerStrength * controllerTurnInput * turningCurve.Evaluate(Mathf.Abs(carVelocityRatio)) * Mathf.Sign(carVelocityRatio) * transform.up, ForceMode.Acceleration);
+    }
+
+    //private void ControllerSideWaysDrag()
+    //{
+    //    float currentSidewaysSpeed = currentCarLocalVelocity.x;
+
+    //    float dragMagnitude = -currentSidewaysSpeed * (Input.GetAxis("BreakingAxis") ? brakingDragCoefficient : dragCoefficient);
+
+    //    Vector3 dragForce = transform.right * dragMagnitude;
+
+    //    carRB.AddForceAtPosition(dragForce, carRB.worldCenterOfMass, ForceMode.Acceleration);
+    //}
+
+    private void ControllerSideWaysDrag()
+    {
+        float currentSidewaysSpeed = currentCarLocalVelocity.x;
+        float brakeInput = Input.GetAxis("BreakingAxis"); // Get the brake input value
+
+        // Determine the drag coefficient based on braking input
+        float appliedDragCoefficient = (brakeInput > 0.1f) ? brakingDragCoefficient : dragCoefficient;
+
+        float dragMagnitude = -currentSidewaysSpeed * appliedDragCoefficient;
+        Vector3 dragForce = transform.right * dragMagnitude;
+
+        carRB.AddForceAtPosition(dragForce, carRB.worldCenterOfMass, ForceMode.Acceleration);
+    }
+
+
+
+
 
 }
 
