@@ -3035,7 +3035,7 @@ PrefabInstance:
     - target: {fileID: 990640797395414851, guid: d24e76b4f85a45e46a6a5d282e50d8a5,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1362075626924146551, guid: d24e76b4f85a45e46a6a5d282e50d8a5,
         type: 3}
@@ -3049,8 +3049,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6447610918760367843, guid: d24e76b4f85a45e46a6a5d282e50d8a5,
         type: 3}
+      propertyPath: warningPrefab
+      value: 
+      objectReference: {fileID: 1566932318019734066, guid: 01e25b5eee268844e90255282e8497a0,
+        type: 3}
+    - target: {fileID: 6447610918760367843, guid: d24e76b4f85a45e46a6a5d282e50d8a5,
+        type: 3}
       propertyPath: warningDuration
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447610918760367843, guid: d24e76b4f85a45e46a6a5d282e50d8a5,
+        type: 3}
+      propertyPath: maxWarningSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447610918760367843, guid: d24e76b4f85a45e46a6a5d282e50d8a5,
+        type: 3}
+      propertyPath: maxWarningSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447610918760367843, guid: d24e76b4f85a45e46a6a5d282e50d8a5,
+        type: 3}
+      propertyPath: maxWarningSize.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6447610918760367843, guid: d24e76b4f85a45e46a6a5d282e50d8a5,
         type: 3}
