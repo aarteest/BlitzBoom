@@ -49,7 +49,11 @@ public class JankyCarControl_Multiplayer : NetworkBehaviour
 
 
 	public Transform bombHolder; // Assign this in the Inspector
-	private void Start()
+
+    [SerializeField] private ParticleSystem explosionVFX;
+
+
+    private void Start()
     {
         carRB = GetComponent<Rigidbody>();
 
@@ -98,6 +102,9 @@ public class JankyCarControl_Multiplayer : NetworkBehaviour
         {
             SubmitMovementServerRpc(moveInput, turnInput);
         }
+
+
+
     }
 
     [ServerRpc(RequireOwnership = false)]
