@@ -668,6 +668,7 @@ GameObject:
   - component: {fileID: 6205244718682154488}
   - component: {fileID: 2644182582097563257}
   - component: {fileID: 8747120402794602665}
+  - component: {fileID: 1360992702247849759}
   m_Layer: 8
   m_Name: MP_Car_4_Wheels
   m_TagString: Player
@@ -1156,6 +1157,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &1360992702247849759
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5356061383124205931}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.5756214, y: 1, z: 7.105283}
+  m_Center: {x: 0.044266522, y: 0, z: -0.02381897}
 --- !u!1 &5609222008541112926
 GameObject:
   m_ObjectHideFlags: 0

@@ -5562,6 +5562,7 @@ GameObject:
   - component: {fileID: 1551664779294462308}
   - component: {fileID: -1265557084598840057}
   - component: {fileID: 1104602880153900481}
+  - component: {fileID: 8901424341810044425}
   m_Layer: 8
   m_Name: MP_Car_2_Wheels
   m_TagString: Player
@@ -6061,6 +6062,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &8901424341810044425
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4048353722031711510}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 7.12, y: 1, z: 2.92}
+  m_Center: {x: 1.6598068e-15, y: 0, z: 1.1167983}
 --- !u!1 &4052434684536529373
 GameObject:
   m_ObjectHideFlags: 0
