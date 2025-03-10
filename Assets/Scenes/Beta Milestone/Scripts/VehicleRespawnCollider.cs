@@ -24,7 +24,7 @@ public class VehicleRespawnCollider : NetworkBehaviour
 
     private void Update()
     {
-        if (IsOwner && Input.GetKeyDown(KeyCode.R)) // Ensure only the local player can trigger
+        if (IsOwner && Input.GetKeyDown(KeyCode.R) || IsOwner && Input.GetButtonDown("ControllerRespawn")) // Ensure only the local player can trigger
         {
             RequestRespawnServerRpc();
         }

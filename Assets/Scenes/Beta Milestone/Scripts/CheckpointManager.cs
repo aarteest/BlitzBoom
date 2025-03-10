@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 using System.Linq;
+using UnityEngine.SceneManagement;
 public class CheckpointManager : NetworkBehaviour
 {
 	public static CheckpointManager instance;
@@ -12,6 +13,7 @@ public class CheckpointManager : NetworkBehaviour
 	private List<PlayerBombTrackerPointSystem> playerScripts = new List<PlayerBombTrackerPointSystem>();
 
 	[SerializeField] private int lapCount;
+	[SerializeField] private string winningScene; // Scene to load, assign in the Inspector
 	public int maxLapPoints;
 
 	public int totalLaps;
@@ -50,6 +52,11 @@ public class CheckpointManager : NetworkBehaviour
 		}
 
 		lapCount++;
+
+		if (lapCount >= totalLaps)
+		{
+			SceneManager.LoadScene(winningScene);
+		}
 		//Debug.Log(lapCount);
 	}
 

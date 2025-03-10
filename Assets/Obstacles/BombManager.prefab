@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3955654941
+  GlobalObjectIdHash: 4106821166
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -70,13 +70,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrelPrefab: {fileID: 2674322061292441846, guid: 9a7fb9dbf5d420840ae576958230e038,
     type: 3}
-  warningPrefab: {fileID: 7394974983150459427, guid: c109856bcf368904a9e6a6d3d9eb404e,
+  warningPrefab: {fileID: 1566932318019734066, guid: 01e25b5eee268844e90255282e8497a0,
     type: 3}
   spawnAreaCollider: {fileID: 2736415326090445300}
   barrelsPerWave: 5
   warningDuration: 2
   timeBetweenWaves: 5
-  maxWarningSize: {x: 3, y: 3, z: 3}
+  maxWarningSize: {x: 1, y: 1, z: 1}
 --- !u!1 &1978622415655693091
 GameObject:
   m_ObjectHideFlags: 0

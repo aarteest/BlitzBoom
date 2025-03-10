@@ -53,7 +53,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3386857684849517558
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1688,6 +1688,7 @@ MonoBehaviour:
   accelerationSFX: {fileID: 959825212397478221}
   idleSFX: {fileID: -8072826936591725973}
   bombHolder: {fileID: 7431369898918985824}
+  explosionVFX: {fileID: 0}
 --- !u!114 &1121822844120911833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1695,7 +1696,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9032868042285495549}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cba392d285b4bb479a7270f48d3990c, type: 3}
   m_Name: 
@@ -1768,7 +1769,9 @@ MonoBehaviour:
   currentLapText: {fileID: 2391019433636924868}
   leaderBoardTextPrefab: {fileID: 6602956817521952059, guid: 0bd16fe2d6981e24082e542c240079bd,
     type: 3}
-  leaaderBoardPanel: {fileID: 1115921275781123505}
+  leaderboardTextParentPrefab: {fileID: 0}
+  leaderBoardPanel: {fileID: 0}
+  leaderBoardTextParents: []
   bombOwnerFeedback: {fileID: 2548957260510608140}
 --- !u!82 &-8072826936591725973
 AudioSource:

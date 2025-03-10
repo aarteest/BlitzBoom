@@ -62,6 +62,7 @@ public class Checkpoints : NetworkBehaviour
 								{
 									CheckpointManager.instance.LapFinished();
 
+
 									CheckpointManager.instance.currentLapPoints = CheckpointManager.instance.maxLapPoints;
 
 								}

@@ -25,7 +25,7 @@ public class VehicleBoost : NetworkBehaviour
     {
         if (!IsOwner) return; // Only local player can trigger boost
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time >= nextBoostTime)
+        if (Time.time >= nextBoostTime && (Input.GetKeyDown(KeyCode.LeftShift)) || Time.time >= nextBoostTime && (Input.GetButtonDown("ControllerBoost")))
         {
             StartBoostServerRpc();
         }
