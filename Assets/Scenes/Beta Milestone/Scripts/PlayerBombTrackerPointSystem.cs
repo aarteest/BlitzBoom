@@ -45,8 +45,8 @@ public class PlayerBombTrackerPointSystem : NetworkBehaviour
 		base.OnNetworkSpawn();
 		for(int i = 0; i < 3; i++)
 		{
-			GameObject textParent =  Instantiate(leaderboardTextParentPrefab, leaderBoardPanel.transform);
-			leaderBoardTextParents.Add(textParent);
+			//GameObject textParent =  Instantiate(leaderboardTextParentPrefab, leaderBoardPanel.transform);
+			//leaderBoardTextParents.Add(textParent);
 		}
 	}
 	private void Update()
