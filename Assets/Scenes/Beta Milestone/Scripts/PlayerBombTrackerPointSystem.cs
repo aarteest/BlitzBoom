@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Unity.Netcode;
-using UnityEngine.InputSystem.iOS;
-using Unity.UI;
 
 
 public class PlayerBombTrackerPointSystem : NetworkBehaviour
