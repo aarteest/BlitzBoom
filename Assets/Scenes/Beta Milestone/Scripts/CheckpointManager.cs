@@ -8,6 +8,7 @@ public class CheckpointManager : NetworkBehaviour
 {
 	public static CheckpointManager instance;
 
+	[SerializeField]
 	private List<Checkpoints> checkpoints = new List<Checkpoints>();
 	private Dictionary<PlayerBombTrackerPointSystem, int> leaderBoard = new Dictionary<PlayerBombTrackerPointSystem, int> { };
 	private List<PlayerBombTrackerPointSystem> playerScripts = new List<PlayerBombTrackerPointSystem>();
@@ -30,6 +31,13 @@ public class CheckpointManager : NetworkBehaviour
 		else
 		{
 			instance = this;
+		}
+		for (int i = 0; i < checkpoints.Count; i++)
+		{
+			if (!checkpoints[i].isFirstCheckpoint)
+			{
+				checkpoints[i].SetPreviousCheckpoint(checkpoints[i - 1]);
+			}
 		}
 	}
 

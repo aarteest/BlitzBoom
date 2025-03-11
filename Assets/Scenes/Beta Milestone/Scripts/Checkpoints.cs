@@ -15,11 +15,11 @@ public class Checkpoints : NetworkBehaviour
 	public bool isFirstCheckpoint;
 	public bool isLastCheckpoint;
 
-	private List<Checkpoints> checkpoints = new List<Checkpoints>();
+
 
 	private void Start()
 	{
-		CheckpointManager.instance.AddCheckPoint(this);
+
 	}
 	public List<JankyCarControl_Multiplayer> GetCrossedCarsList()
 	{
@@ -85,6 +85,10 @@ public class Checkpoints : NetworkBehaviour
 		}
 	}
 
+	public void SetPreviousCheckpoint(Checkpoints _previousCheckpoint)
+	{
+		previousCheckpoint = _previousCheckpoint;
+	}
 	public void SetLapPoints(int _maxLapPoints)
 	{
 		lapPoints = _maxLapPoints;
