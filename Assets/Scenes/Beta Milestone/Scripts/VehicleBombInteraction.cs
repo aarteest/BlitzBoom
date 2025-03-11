@@ -35,7 +35,9 @@ public class VehicleBombInteraction : NetworkBehaviour
                 Debug.Log("Bomb picked up!");
 
                 // Notify the point system
-                bombTracker?.PickUpBomb();
+                //bombTracker?.PickUpBomb();
+
+                bombTracker.PickUpBomb();
             }
         }
     }

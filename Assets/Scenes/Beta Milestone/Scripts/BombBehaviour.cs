@@ -66,6 +66,7 @@ public class BombBehaviour : NetworkBehaviour
             withoutHolderTimer -= Time.deltaTime;
             if (withoutHolderTimer <= 0f)
             {
+                if (!IsServer) return;
                 bManager.SpawnBomb();
                 Destroy(gameObject);
                 Debug.Log("Bomb Exploded Without Holder");
@@ -73,6 +74,8 @@ public class BombBehaviour : NetworkBehaviour
 
             
         }
+
+        //ContantPosiChange();
 
     }
 
@@ -174,6 +177,7 @@ public class BombBehaviour : NetworkBehaviour
 			networkObject.TrySetParent(vehicleController.bombHolder.GetComponent<NetworkObject>(), true);
 			transform.localPosition = Vector3.zero;
 			transform.localRotation = Quaternion.identity;
+            
 
 			rb.isKinematic = true;
 			rb.detectCollisions = false;
@@ -214,7 +218,24 @@ public class BombBehaviour : NetworkBehaviour
 
     }
 
+    //private void ContantPosiChange()
+    //{
 
+    //    Debug.Log("Trying To Change Posi Constantly");
+
+    //    GameObject constantHolder;
+    //    constantHolder = currentHolder;
+    //    JankyCarControl_Multiplayer vehicleController = constantHolder.GetComponent<JankyCarControl_Multiplayer>();
+
+    //    if (constantHolder != null)
+    //    {
+    //        transform.Translate(vehicleController.bombHolder.transform.position);
+
+    //        Debug.Log("Changing Posi Constantly");
+    //    }
+
+
+    //}
 
 
 }
