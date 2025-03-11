@@ -1445,7 +1445,7 @@ MonoBehaviour:
   leaderboardTextParentPrefab: {fileID: 0}
   leaderBoardPanel: {fileID: 0}
   leaderBoardTextParents: []
-  bombOwnerFeedback: {fileID: 0}
+  bombOwnerFeedback: {fileID: 6297120157221481521}
 --- !u!82 &2644182582097563257
 AudioSource:
   m_ObjectHideFlags: 0
