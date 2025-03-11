@@ -2155,7 +2155,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Astroid Belt
+  m_text: Asteroid Belt
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 44427596d32212e4482bc0ed40f4a676, type: 2}
   m_sharedMaterial: {fileID: -7064382088187122810, guid: 44427596d32212e4482bc0ed40f4a676,
