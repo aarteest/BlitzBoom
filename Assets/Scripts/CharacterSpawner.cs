@@ -31,6 +31,7 @@ public class CharacterSpawner : NetworkBehaviour
 
             // Retrieve the character using its ID
             var character = characterDatabase.GetCharacterById(client.Value.characterId);
+            characterDatabase.ResetCharacterData();
             if (character != null && availableSpawnPoints.Count > 0)
             {
                 // Select and remove a spawn point from the list

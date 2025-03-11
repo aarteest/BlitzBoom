@@ -19,7 +19,7 @@ public class LeaderBoardManager : MonoBehaviour
 		{
 			if (c.playerScore > 0)
 			{
-			playerScores.Add(c);
+				playerScores.Add(c);
 
 			}
 		}
@@ -30,8 +30,9 @@ public class LeaderBoardManager : MonoBehaviour
 		{
 			if (i < playerScores.Count)
 			{
-			Instantiate(playerScores[i].VictoryPrefab, leaderboardPositionTransform[i]);
-			leaderboardTexts[i].text = $"{i+1}) {playerScores[i].DisplayName}: {playerScores[i].playerScore}";
+				GameObject go = Instantiate(playerScores[i].VictoryPrefab, leaderboardPositionTransform[i]);
+				go.transform.localPosition = Vector3.zero;
+				leaderboardTexts[i].text = $"{i + 1}) {playerScores[i].DisplayName}: {playerScores[i].playerScore}";
 
 			}
 		}
