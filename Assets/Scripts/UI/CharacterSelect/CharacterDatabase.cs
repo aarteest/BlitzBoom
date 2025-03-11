@@ -25,4 +25,12 @@ public class CharacterDatabase : ScriptableObject
     {
         return characters.Any(x => x.Id == id);
     }
+
+    public void ResetCharacterData()
+    {
+        foreach (Character c in characters)
+        {
+            c.playerScore = 0;
+        }
+    }
 }
