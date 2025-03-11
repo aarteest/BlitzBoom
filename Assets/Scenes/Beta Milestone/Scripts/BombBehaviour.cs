@@ -131,7 +131,7 @@ public class BombBehaviour : NetworkBehaviour
         {
 
             VehicleDebuff debuff = currentHolder.GetComponent<VehicleDebuff>();
-			currentHolder.GetComponent<PlayerBombTrackerPointSystem>().DropBomb();
+			currentHolder.GetComponent<PlayerBombTrackerPointSystem>().DropBombServerRpc();
 
 			debuff?.ApplyExplosion();
 
