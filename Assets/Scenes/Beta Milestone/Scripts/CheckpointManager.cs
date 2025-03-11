@@ -113,7 +113,7 @@ public class CheckpointManager : NetworkBehaviour
 
 		foreach (var _playerScript in leaderBoard.Keys.ToList())
 		{
-			_playerScript.UpdateLeaderboardServerRpc();
+			_playerScript.UpdateLeaderboardUI();
 		}
 	}
 	public void UpdateLeaderboardRanking()

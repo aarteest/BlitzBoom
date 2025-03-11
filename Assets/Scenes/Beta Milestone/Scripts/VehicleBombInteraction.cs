@@ -35,7 +35,7 @@ public class VehicleBombInteraction : NetworkBehaviour
                 Debug.Log("Bomb picked up!");
 
                 // Notify the point system
-                bombTracker?.PickUpBombServerRpc();
+                bombTracker?.PickUpBomb();
             }
         }
     }
@@ -97,7 +97,7 @@ public class VehicleBombInteraction : NetworkBehaviour
                 // Notify the point system that we've dropped/thrown the bomb.
                 if (bombTracker != null)
                 {
-                    bombTracker.DropBombServerRpc();
+                    bombTracker.DropBomb();
                 }
             }
         }

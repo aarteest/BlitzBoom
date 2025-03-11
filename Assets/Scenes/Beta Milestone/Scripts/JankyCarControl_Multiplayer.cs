@@ -225,7 +225,7 @@ public class JankyCarControl_Multiplayer : NetworkBehaviour
 
 		if (TryGetComponent<PlayerBombTrackerPointSystem>(out PlayerBombTrackerPointSystem pointSystem))
         {
-			pointSystem.AddToTotalPointsServerRpc(points);
+			pointSystem.AddToTotalPoints(points);
 
 			if (finishedLapCount >= CheckpointManager.instance.totalLaps)
             {
